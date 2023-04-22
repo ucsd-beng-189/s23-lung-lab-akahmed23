@@ -1,9 +1,10 @@
 clear all
+close all
 clf
 global Pstar cstar n maxcount M Q camax RT cI;
-CIconstant =[0.209,0.173,0.143,0.118,0.097];
-
-for i = 1:5
+CIconstant =[0.209,0.173,0.143,0.118,0.097,0.094,0.09,0.087];
+Alt = [0, 5000,10000,15000,20000,21000,22000,23000] % alt in feet
+for i = 1:8
     cI=CIconstant(i)/(22.4*(310/273));
 setup_lung
 cvsolve
@@ -19,16 +20,16 @@ cvlist(i)=cv;
 end
 
 % Plot the results
-figure('NumberTitle','off','Name','Partial pressure of oxygen vs Concentration of oxygen in air');
-plot(cI,PIlist)
+figure('NumberTitle','off','Name','Partial pressure of oxygen vs Altitude');
+plot(Alt,PIlist)
 hold on
-plot(cI,Palist)
-plot(cI,PAlist)
-plot(cI,Pvlist)
-plot(cI,cAlist)
-plot(cI,calist)
-plot(cI,cvlist)
-xlabel('Concentration of oxygen in air (moles/liter)')
+plot(Alt,Palist)
+plot(Alt,PAlist)
+plot(Alt,Pvlist)
+plot(Alt,cAlist)
+plot(Alt,calist)
+plot(Alt,cvlist)
+xlabel('Altitude in feet')
 ylabel('Partial pressure of oxygen (mmHg)')
 legend('PI', 'Pabar', 'PAbar', 'Pv','cAbar','cabar','cv')
-title('Partial pressure of oxygen vs Concentration of oxygen in air')
+title('Partial pressure of oxygen vs Altitude')
