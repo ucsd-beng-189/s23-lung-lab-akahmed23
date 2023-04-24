@@ -2,8 +2,8 @@ clear all
 close all
 clf
 global Pstar cstar n maxcount M Q camax RT cI;
-CIconstant =[0.209,0.173,0.143,0.118,0.097,0.094,0.09,0.087,0.084,0.081];
-Alt = [0, 5000,10000,15000,20000,21000,22000,23000,24000,25000] % alt in feet
+CIconstant =[0.209,0.173,0.143,0.118,0.097,0.094];
+Alt = [0, 5000,10000,15000,20000,21000] % alt in feet
 for i = 1:length(Alt)
     cI=CIconstant(i)/(22.4*(310/273));
 setup_lung

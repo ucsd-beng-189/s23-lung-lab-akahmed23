@@ -20,7 +20,7 @@ cref=0.2/(22.4*(310/273))
 %
 %blood oxygen concentration
 %at full hemoglobin saturation: 
-cstar=1.5*cref
+cstar=cref
 %cstar=4*(concentration of hemoglobin 
 %in blood expressed in moles/liter)
 %
@@ -49,7 +49,7 @@ camax=cstar*(PI/Pstar)^3/(1+(PI/Pstar)^3)
 VAtotal=5.0     %(liters/minute)
 %
 %expected value of total perfusion:
-Qtotal=5.6      %(liters/minute)
+Qtotal=2.8      %(liters/minute)
 %
 %expected alveolar ventilation per alveolus:
 VAbar=VAtotal/n
